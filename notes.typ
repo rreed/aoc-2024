@@ -20,3 +20,10 @@ i have nevertheless been trying to make sure that i don't break the "part one" a
 Also pretty straightforward. Part two is doable entirely in terms of part one, so i just solve part two by checking if it's safe under the rules of part one and, if it's not, removing numbers one by one until *any* of those lists is safe under the rules of part one, which accounts for the lists covered by the Problem Dampener™.
 
 `is_safe_one` could probably be written in terms of `take_while` to be more idiomatic.
+
+= Mull It Over
+Well, this one was really easy, but it was finally time for me to figure out how to set up Cargo because I needed the `regex` crate. So that made it take longer than it otherwise would have (I don't actually know what Cargo's fairly-opinionated file structure wants, and had to cat up and learn that here).
+
+I am a bit surprised that there's no regex support in the standard library?
+
+Part two was easy once I realized that I don't need to track enabled/disabled states because I can just nuke the disabled instructions from the input entirely.

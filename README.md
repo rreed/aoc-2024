@@ -9,3 +9,5 @@ This is being done with two main goals:
 So don't expect the code to be that of an expert. :)
 
 Most of the day-to-day notes are in `notes.typ`.
+
+`cargo run --bin whatever` to run something, e.g. `cargo run --bin three` to run problem three.
