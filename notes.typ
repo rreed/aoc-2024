@@ -27,3 +27,8 @@ Well, this one was really easy, but it was finally time for me to figure out how
 I am a bit surprised that there's no regex support in the standard library?
 
 Part two was easy once I realized that I don't need to track enabled/disabled states because I can just nuke the disabled instructions from the input entirely.
+
+= Ceres Search
+Okay, the pun in part two here is extremely stupid but funny.
+
+I have often heard that usize/i32 conversion can be a real pain in Rust, but I'm seeing it live here. The rest of this is mostly just about making this as FP-shaped as possible. There's no directionality to part two: anything on the outer edge of the box will _never_ be an X-MAS. So part two ends up just being about enumerating the four possible shapes you could have. I'm sure there's a "cooler" way to do that, though.
