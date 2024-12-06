@@ -32,3 +32,15 @@ Part two was easy once I realized that I don't need to track enabled/disabled st
 Okay, the pun in part two here is extremely stupid but funny.
 
 I have often heard that usize/i32 conversion can be a real pain in Rust, but I'm seeing it live here. The rest of this is mostly just about making this as FP-shaped as possible. There's no directionality to part two: anything on the outer edge of the box will _never_ be an X-MAS. So part two ends up just being about enumerating the four possible shapes you could have. I'm sure there's a "cooler" way to do that, though.
+
+= Print Queue
+Writing `is_correctly_ordered` here turned out to be very useful, because then it allowed me to have the bad lists just be `!is_correctly_ordered` when part two rolled around.
+
+I had originally reordered by swapping the two elements that were in the wrong order, but later opted to switch to "move the wrong one immediately after the right one", which turns out to be a fair bit faster, though I think this is also just because of the nature of the inputs.
+
+I had to level up my Rust FP skills a bit to write `main()` without like eight different lists, but that was rewarding~
+
+= Guard Gallivant
+The elephant in the room: this code is *grievously* slow, but I don't need to be putting any more time into it on a work day. :) May revisit it later though.
+
+The funniest bug here was that I was, at one point, starting the loop checker from the position of the newly-placed obstacle rather than the guard, and at one point in my inputs this just so happens to put the guard into an infinite loop of turning right. Oops. Sorry, Guard-friend.
