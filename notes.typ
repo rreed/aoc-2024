@@ -44,3 +44,8 @@ I had to level up my Rust FP skills a bit to write `main()` without like eight d
 The elephant in the room: this code is *grievously* slow, but I don't need to be putting any more time into it on a work day. :) May revisit it later though.
 
 The funniest bug here was that I was, at one point, starting the loop checker from the position of the newly-placed obstacle rather than the guard, and at one point in my inputs this just so happens to put the guard into an infinite loop of turning right. Oops. Sorry, Guard-friend.
+
+= Bridge Repair
+A lot of this problem was just me combinatorics-ing too close to the sun. I had initially written the permutation finder in a way that it generated 2^n permutations instead of 2 << n.
+
+I also tried to be clever and use `meval` for part one, but it just wants to obey PEMDAS a bit too much for that. :) This turned out to be useful because part two would require it anyway.
