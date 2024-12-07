@@ -1,4 +1,5 @@
 // https://adventofcode.com/2024/day/6
+use std::collections::HashSet;
 use std::fs::File;
 use std::io::{self, BufRead};
 
@@ -26,7 +27,11 @@ fn find_guard(map: &Vec<Vec<char>>) -> Option<(usize, usize)> {
     None
 }
 
-fn patrol(map: &Vec<Vec<char>>, init_row: usize, init_col: usize) -> (Vec<(usize, usize)>, bool) {
+fn patrol(
+    map: &Vec<Vec<char>>,
+    init_row: usize,
+    init_col: usize,
+) -> (HashSet<(usize, usize)>, bool) {
     let directions: [(i32, i32); 4] = [
         (-1, 0), // N
         (0, 1),  // E
@@ -38,12 +43,12 @@ fn patrol(map: &Vec<Vec<char>>, init_row: usize, init_col: usize) -> (Vec<(usize
     let mut facing = directions[dir_idx];
     let mut row = init_row;
     let mut col = init_col;
-    let mut visited: Vec<(usize, usize)> = Vec::new();
+    let mut visited: HashSet<(usize, usize)> = HashSet::new();
     let mut revisited = 0;
     // let max_revisitable = map.len() * map[0].len();
     let max_revisitable = map.len() * 5;
     // include the starting position~
-    visited.push((row, col));
+    visited.insert((row, col));
     while let Some(row_vec) = map.get(((row as i32) + facing.0) as usize) {
         if let Some(next_step) = row_vec.get(((col as i32) + facing.1) as usize) {
             if *next_step == '#' {
@@ -57,7 +62,7 @@ fn patrol(map: &Vec<Vec<char>>, init_row: usize, init_col: usize) -> (Vec<(usize
                 // and mark it visited
                 let maybe_visited = (row, col);
                 if !visited.contains(&maybe_visited) {
-                    visited.push(maybe_visited);
+                    visited.insert(maybe_visited);
                 } else {
                     revisited += 1;
                     if revisited >= max_revisitable {
@@ -101,15 +106,13 @@ fn main() -> io::Result<()> {
     let (visited_p1, _) = patrol(&map, guard_row, guard_col);
     let ans_one = visited_p1.len();
 
-    let map_height = map.len();
-    let map_width = map[0].len();
-    let ans_two = (0..map_height)
-        .map(|r| {
-            (0..map_width)
-                .filter(|&c| loop_possible(&map, r, c, guard_row, guard_col))
-                .count()
-        })
-        .sum::<usize>();
+    // since we're only placing one new obstacle,
+    // it has to be somewhere on the path the guard took in p1
+    // or they'd just never run into it
+    let ans_two = visited_p1
+        .iter()
+        .filter(|(r, c)| loop_possible(&map, *r, *c, guard_row, guard_col))
+        .count();
 
     println!("Ans Part One: {ans_one}");
     println!("Ans Part Two: {ans_two}");
