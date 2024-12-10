@@ -54,6 +54,7 @@ I also tried to be clever and use `meval` for part one, but it just wants to obe
 
 So I ended up drawing a TON of random pictures to make sure my algorithm even made sense here, which I'll share here for funsies.
 
+```
 a1r > a2r and a1c > a2c: (3,3), (2,2)
 antinodes (1,1) and (4,4)
 ......
@@ -62,7 +63,9 @@ antinodes (1,1) and (4,4)
 ...1..
 ....a.
 ......
+```
 
+```
 a1r < a2r and a1c > a2c: (2,3), (3,2)
 antinodes (1,4) and (4,1)
 ......
@@ -71,7 +74,9 @@ antinodes (1,4) and (4,1)
 ..2...
 .a....
 ......
+```
 
+```
 a1r > a2r and a1c < a2c: (3,2), (2,3)
 antinodes (4,1) and (1,4)
 ......
@@ -80,7 +85,9 @@ antinodes (4,1) and (1,4)
 ..1...
 .a....
 ......
+```
 
+```
 a1r < a2r and a1c < a2c: (2,2), (3,3)
 antinodes (4,4) and (1,1)
 ......
@@ -89,8 +96,10 @@ antinodes (4,4) and (1,1)
 ...2..
 ....a.
 ......
+```
 
 and the slightly-special cases:
+```
 a1c == a2c: (3,1), (2,1)
 antinodes (4,1) and (1,1)
 ......
@@ -99,7 +108,9 @@ antinodes (4,1) and (1,1)
 .1....
 .a....
 ......
+```
 
+```
 a1r == a2r: (1,2), (1,3)
 antinodes (1,1) and (1,4)
 ......
@@ -108,13 +119,17 @@ antinodes (1,1) and (1,4)
 ......
 ......
 ......
+```
 
 so what covers all of these?
+```
 dr = a1r - a2r
 dc = a1c - a2c
 anti1: (a1r + dr, a1c + dc)
 anti2: (a2r - dr, a2c - dc)
+```
 
+```
 (3,3), (2,2) -> dr: 1, dc: 1 (3+1 3+1) and (2-1 2-1) 
 (2,3), (3,2) -> dr: -1, dc: 1 (2+-1 3+1) and (3--1 2-1) 
 (3,2), (2,3) -> dr: 1, dc: -1 (3+1 2+-1) and (2-1 3--1) 
@@ -123,6 +138,7 @@ anti2: (a2r - dr, a2c - dc)
 (2,1), (3,1) -> dr: -1, dc: 0 (2+-1 1+0) and (3--1 1-0) 
 (1,3), (1,2) -> dr: 0, dc: 1 (1+0 3+1) and (1+0 2-1) 
 (1,2), (1,3) -> dr: 0, dc: -1 (1+0 2+-1) and (1+0 3--1) 
+```
 
 Anyway, uh, that was fun. Part two took me an embarassingly long time to realize that the antennae, themselves, are also nodes, but is otherwise almost identical to part one.
 
@@ -131,3 +147,9 @@ Anyway, uh, that was fun. Part two took me an embarassingly long time to realize
 I found this one honestly kinda overwhelming to *read* but it was fun to implement. 
 
 I pity the people who decided to just keep things as chars and then realized "oh wait IDs can be > 9 huh"; one person's solution on Reddit for this one uses emoji for everything over 9 and I *do* respect the utter commitment to the bit.
+
+= Hoof It
+
+I suppose we were overdue for the obligatory bfs/dfs question this year. 
+
+I accidentally solved part two before part one here, but that also kinda seems like the more "natural" bfs question. I went back and added a hashset to only track unique peaks instead of all paths, then I just hit undo a few times. At that point it annoyed me how un-DRY my code was so I just smashed `bfs_one` and `bfs_two` into each other and had them return a tuple.
