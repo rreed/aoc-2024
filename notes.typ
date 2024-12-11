@@ -153,3 +153,11 @@ I pity the people who decided to just keep things as chars and then realized "oh
 I suppose we were overdue for the obligatory bfs/dfs question this year. 
 
 I accidentally solved part two before part one here, but that also kinda seems like the more "natural" bfs question. I went back and added a hashset to only track unique peaks instead of all paths, then I just hit undo a few times. At that point it annoyed me how un-DRY my code was so I just smashed `bfs_one` and `bfs_two` into each other and had them return a tuple.
+
+= Plutonian Pebbles
+
+As I write, I can hear the Outer Wilds space banjo.
+
+I honestly really enjoy the problems like this, they're really fun. :) There's probably a fancy flat_mappy way to do this.
+
+This is the typical AOC problem of "do something with a reasonable input then do that same thing with an unreasonable one". Since the input gets 50% larger (roughly) each time you need to avoid anything that scales too fast.
