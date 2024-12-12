@@ -161,3 +161,11 @@ As I write, I can hear the Outer Wilds space banjo.
 I honestly really enjoy the problems like this, they're really fun. :) There's probably a fancy flat_mappy way to do this.
 
 This is the typical AOC problem of "do something with a reasonable input then do that same thing with an unreasonable one". Since the input gets 50% larger (roughly) each time you need to avoid anything that scales too fast.
+
+= Garden Groups
+
+*Oof.*
+
+I ended up throwing away an entire close-to-right solution here (i.e., it worked for part one but part two was overcounting just a bit in ways I never debugged). I had originally done `Vec<Vec<char>>` for the return type of `read_input` as I've done in every other similar problem, but I decided that I was extremely tired of converting back and forth between isize and usize dozens of times so I just ended up padding out with `.` as a sentinel value. 
+
+The realization of "the number of corners in a polygon is also the number of sides in a polygon" helped a ton~
