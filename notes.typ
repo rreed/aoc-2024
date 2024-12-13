@@ -169,3 +169,11 @@ This is the typical AOC problem of "do something with a reasonable input then do
 I ended up throwing away an entire close-to-right solution here (i.e., it worked for part one but part two was overcounting just a bit in ways I never debugged). I had originally done `Vec<Vec<char>>` for the return type of `read_input` as I've done in every other similar problem, but I decided that I was extremely tired of converting back and forth between isize and usize dozens of times so I just ended up padding out with `.` as a sentinel value. 
 
 The realization of "the number of corners in a polygon is also the number of sides in a polygon" helped a ton~
+
+= Claw Contraption
+
+I read this, saw that Alex hadn't gotten part two yet, and said "oh no, part two is going to just be another insane input that hobbles my algorithm again, huh". 
+
+I didn't start with the linear algebra stuff, *hoping* that I wouldn't have to, solving part one with a gcd helper and BFS (again)..but then I ended up having to just scrap part one to do linear algebra because part two was just "add 1e13 to both targets" and the recursive thing just WAS NOT going to work. 
+
+Anyway, I'm glad that I could just read about the math behind this because this problem is almost purely math, no "algorithm".
