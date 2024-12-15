@@ -177,3 +177,17 @@ I read this, saw that Alex hadn't gotten part two yet, and said "oh no, part two
 I didn't start with the linear algebra stuff, *hoping* that I wouldn't have to, solving part one with a gcd helper and BFS (again)..but then I ended up having to just scrap part one to do linear algebra because part two was just "add 1e13 to both targets" and the recursive thing just WAS NOT going to work. 
 
 Anyway, I'm glad that I could just read about the math behind this because this problem is almost purely math, no "algorithm".
+
+= Restroom Redoubt
+
+Not feeling part two of this one *at all*. The intuitive leap to "they'll probably group up at some point to make the shape, and that means either they'll all be in the middle or all in one quadrant and thus the security score will be really low" is like...okay, fine, but that's not defined in the problem very well, so it just feels like "figure out the One Weird Trick" instead of an actual algorithm.
+
+Part one was fun though~
+
+= Warehouse Woes
+
+Guh. This one was *tough* for me.
+
+I ended up throwing away a lot of my code between part one and two and deciding that I was really tired of not having a decent approach to as many "grid-based" questions as AOC seems to have. This was my opportunity to learn more of the Rust type system, but that also meant that I didn't finish this until like 6pm because I wrote and rewrote my solution several times to get a decent answer.
+
+Sigh, oh well, I'm like, not *actually* being competitive about this.
