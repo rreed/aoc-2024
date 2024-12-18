@@ -207,3 +207,11 @@ Part one is pretty straightforward, though this is also the most comments I've l
 Part two is *spicy*, but in a way that I enjoyed a lot more than 14-2 (Restroom Redoubt a few paragraphs back). Since B is only ever written to by `bxl` `bst` and `bxc`, and all of those are either XORs of what's already there or a thing that ends in `modulo 8`, this register never actually gets out of hand. It's also the only place `out` reads from, meaning that we'll only ever get a single digit at a time. So we can basically just build up a working program backwards, u8 by u8. (Get it? Reverse engineering? Har har har...)
 
 Typing `struct TimeComputer` made me really happy.
+
+= RAM Run
+
+Okay, I felt sure that Part Two here was going to be "actually, you can move while the blocks fall" and I was going to be miserable. But it wasn't, so we can go back to just saying...
+
+`BORN TO DIJKSTRA / WORLD IS A FUCK / Kill Em All 1989 / I am trash cat`
+
+This is actually just strictly easier than 16 was because there's no complication, it's Just Dijkstra's again.
