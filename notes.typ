@@ -191,3 +191,19 @@ Guh. This one was *tough* for me.
 I ended up throwing away a lot of my code between part one and two and deciding that I was really tired of not having a decent approach to as many "grid-based" questions as AOC seems to have. This was my opportunity to learn more of the Rust type system, but that also meant that I didn't finish this until like 6pm because I wrote and rewrote my solution several times to get a decent answer.
 
 Sigh, oh well, I'm like, not *actually* being competitive about this.
+
+= Reindeer Maze
+
+`BORN TO DIJKSTRA / WORLD IS A FUCK / Kill Em All 1989 / I am trash cat`
+
+Uh, anyway. Yeah part one is just Dijkstra. Part two is more interesting: building up paths and then retracing back to anywhere that might have an identical score. This uses the fact that there's literally no reason to ever "turn around" to just check the 90 degrees on either side of the reindeer, which is kinda nice. Overall, I spent way longer than I wanted on part two.
+
+= Chronospatial Computer
+
+Oh boy, now we're cooking.
+
+Part one is pretty straightforward, though this is also the most comments I've left in any file I've written for AoC this year. I'm sure there are fancy ways to do this, but I liked just having the instructions all written out and commented like that.
+
+Part two is *spicy*, but in a way that I enjoyed a lot more than 14-2 (Restroom Redoubt a few paragraphs back). Since B is only ever written to by `bxl` `bst` and `bxc`, and all of those are either XORs of what's already there or a thing that ends in `modulo 8`, this register never actually gets out of hand. It's also the only place `out` reads from, meaning that we'll only ever get a single digit at a time. So we can basically just build up a working program backwards, u8 by u8. (Get it? Reverse engineering? Har har har...)
+
+Typing `struct TimeComputer` made me really happy.
