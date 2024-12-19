@@ -215,3 +215,9 @@ Okay, I felt sure that Part Two here was going to be "actually, you can move whi
 `BORN TO DIJKSTRA / WORLD IS A FUCK / Kill Em All 1989 / I am trash cat`
 
 This is actually just strictly easier than 16 was because there's no complication, it's Just Dijkstra's again.
+
+= Linen Layout
+
+This one was...honestly far easier than I was expecting for something up in Day 19. A typical "pass a mutable hashmap as a cache to avoid repeated work" layer around some really basic recursion. It's fast enough that I don't even mind calling `count_possible` twice (though of course the fact that the cache is already full by the second call helps a lot.)
+
+I was surprised that the answer to part two is *so* much bigger than part one, roughly twelve orders of magnitude.
