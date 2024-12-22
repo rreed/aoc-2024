@@ -235,3 +235,9 @@ A lot of the work here is in `main`; I mostly wanted to see if I could write som
 Jesus, even reading and understanding this one felt like a lot. But it ended up being not that bad.
 
 This is where I decided that I'm just going to start using the `memoize` crate for any of the problems that are "part one but with a bonkers input", because that's probably what I'd do in a professional context. I'm sure some the Dark Souls "you're playing the game wrong" crowd will be mad but fuck 'em. ;3
+
+= Monkey Market
+
+This one was really fun to do, but I found the problem description annoyingly ambiguous. It was unclear to me when "the secret number" meant "the thing you just calculated" and when it did not. I interpreted "the given number" to mean "the original input" and thus all of my math was wrong. I basically only ended up solving this by just...trying different things that the words *might* mean until I got something that lined up with the examples, and then that just cleanly solved part one.
+
+Other than that bit of linguistic annoyance, this one was fun~
