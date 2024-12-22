@@ -232,7 +232,7 @@ impl From<char> for Direction {
 pub fn part_two() -> usize {
     let input: &str = include_str!("fifteen.in");
 
-    let (warehouse, moves) = input.split_once("\r\n\r\n").unwrap();
+    let (warehouse, moves) = input.split_once("\n\n").unwrap();
 
     let mut warehouse = WarehouseState::new(warehouse);
     let moves: Vec<Direction> = moves

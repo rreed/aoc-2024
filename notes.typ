@@ -221,3 +221,17 @@ This is actually just strictly easier than 16 was because there's no complicatio
 This one was...honestly far easier than I was expecting for something up in Day 19. A typical "pass a mutable hashmap as a cache to avoid repeated work" layer around some really basic recursion. It's fast enough that I don't even mind calling `count_possible` twice (though of course the fact that the cache is already full by the second call helps a lot.)
 
 I was surprised that the answer to part two is *so* much bigger than part one, roughly twelve orders of magnitude.
+
+= Race Condition
+
+Har har har.
+
+Ah, well there's the extremely complicated one.
+
+A lot of the work here is in `main`; I mostly wanted to see if I could write some extremely long functional chains successfully. (It didn't work, I mostly just ended up writing a thing I probably would have wanted to put in its own function inline. Oops.)
+
+= Keypad Conundrum
+
+Jesus, even reading and understanding this one felt like a lot. But it ended up being not that bad.
+
+This is where I decided that I'm just going to start using the `memoize` crate for any of the problems that are "part one but with a bonkers input", because that's probably what I'd do in a professional context. I'm sure some the Dark Souls "you're playing the game wrong" crowd will be mad but fuck 'em. ;3
