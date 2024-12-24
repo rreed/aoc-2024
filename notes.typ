@@ -241,3 +241,15 @@ This is where I decided that I'm just going to start using the `memoize` crate f
 This one was really fun to do, but I found the problem description annoyingly ambiguous. It was unclear to me when "the secret number" meant "the thing you just calculated" and when it did not. I interpreted "the given number" to mean "the original input" and thus all of my math was wrong. I basically only ended up solving this by just...trying different things that the words *might* mean until I got something that lined up with the examples, and then that just cleanly solved part one.
 
 Other than that bit of linguistic annoyance, this one was fun~
+
+= LAN Party
+
+I really want to go to a reindeer LAN party.
+
+Part two of this is just outright NP-complete (it's the [Longest Path Problem](https://en.wikipedia.org/wiki/Longest_path_problem)) so there has to be something "nice" about the input. I solved this before reading [this](https://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm) and now I wish I hadn't. But hey, it's nice to know that a nice algorithm exists!
+
+= Crossed Wires
+
+~~Man, what a good furry comic.~~
+
+Part one's straightforward. Part two is...not, but the inputs follow some basic rules, and I ended up just slamming all of those into a for_each and crossing my fingers that I'd end up with exactly eight nodes in the output, which I did. I have noooooo idea if this works on all inputs! Whee!
